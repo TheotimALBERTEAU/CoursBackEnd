@@ -4,11 +4,9 @@ const sequelize = require('../config/database');
 const Game = sequelize.define(
     'Game',
     {
-        id: {
-            type: DataTypes.INTEGER,
+        uid: {
+            type: DataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true,
-            allowNull: false,
         },
         title: {
             type: DataTypes.STRING,

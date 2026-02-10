@@ -5,8 +5,8 @@ class DaogameMongoose extends IDAOGame {
     /**
      * Override explicitement si la methode existe dans le parent
      */
-    async insert(gameTitle) {
-        const newGame = new Game({"title" : gameTitle});
+    async insert(game) {
+        const newGame = new Game({uid : game.uid, "title" : game.title});
 
         return await newGame.save()
     }
