@@ -1,6 +1,7 @@
 // const Game = require('../dao/sequelize/GameModel');
 // const DAOGameSequelize = require('../dao/sequelize/daoGameSequelize');
 const DAOFactory = require('../dao/DAOFactory');
+const {makeService} = require("./serviceHelper");
 // const daoGame = new DAOGameSequelize()
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
         const gameTitle = req.title
         const myGame = await DAOFactory.getDAOGame().insert(gameTitle);
 
-        return { code: "200", message: "Un message", data:  myGame};
+        return makeService("200", "Ajout d'un jeu", myGame);
     },
 
     getAll: async () => {
@@ -18,6 +19,6 @@ module.exports = {
         // Await car async et faut retourner la réponse json une fois la requête Insert  executée
         const allGames = await DAOFactory.getDAOGame().selectAll();
 
-        return { code: "200", message: "Un message", data:  allGames};
+        return makeService("200", "Affichage de tous les jeux", allGames);
     }
 }
