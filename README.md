@@ -24,8 +24,8 @@ Ce projet est une API REST développée avec **Node.js** et **Express**. Il met 
 ## 🛠️ Structure du Projet
 
 ```text
-src/
-├── dao/
+src/                                # Code Source de l'API
+├── dao/                            # Couche d'accès des données (Data Access Object) : isole la logique de persistence
 │   ├── mongoose/                   # Implémentation MongoDB
 │   │   ├── models/                 # Dossier des modèles de tables Mongoose
 │   │   │   └── GameModel.js        # Modèle de la table Game
@@ -39,8 +39,8 @@ src/
 │   │       └── UserModel.js        # Modèle Table User
 │   │   ├── connection.js           # Fichier de Connexion a MongoDB
 │   │   └── daogame-sequelize.js    # Fichiers des méthodes MongoDB
-│   ├── daoFactory.js               # Sélecteur de base de données
-│   └── idaoGame.js                 # Interface/Contrat de base
+│   ├── dao-factory.js              # Sélecteur de base de donnée grâce à la valeur de .env
+│   └── idaoGame.js                 # Interface/Contrat de base (fonctions à obligatoirement implantées dans les fichiers dao des DB)
 ├── routes/                         # Définition des points d'entrée (Endpoints)
 ├── services/                       # Logique métier (traitement des données)
 ├── app.js                          # Configuration Express et démarrage

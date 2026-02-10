@@ -1,5 +1,5 @@
-const DAOFactory = require('../dao/DAOFactory');
-const {makeService} = require("./serviceHelper");
+const DAOFactory = require('../dao/dao-factory');
+const {makeService} = require("./service-helper");
 const { v4 : uuidv4 }= require('uuid');
 
 module.exports = {
