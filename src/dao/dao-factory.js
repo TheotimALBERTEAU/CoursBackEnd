@@ -15,5 +15,8 @@ module.exports = {
             const DAOGameMongoose = require("./mongoose/daogame-mongoose");
             return new DAOGameMongoose();
         }
+
+        const DAOGameMock = require("./mock/daogame-mock");
+        return new DAOGameMock();
     }
 }
