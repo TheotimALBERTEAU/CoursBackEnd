@@ -15,6 +15,11 @@ module.exports = {
             const DAOGameMongoose = require("./mongoose/daogame-mongoose");
             return new DAOGameMongoose();
         }
+        // MODE : Mock
+        else if (process.env.DB_MODE === "mock") {
+            const DAOGameMock = require("./mock/daogame-mock");
+            return new DAOGameMock();
+        }
 
         const DAOGameMock = require("./mock/daogame-mock");
         return new DAOGameMock();
